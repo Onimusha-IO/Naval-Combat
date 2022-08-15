@@ -88,7 +88,7 @@ const Board = ({ playerName }: any) => {
           return def !== undefined;
         });
 
-      console.log("horizontal location: ", location);
+      console.log("vertical location: ", location);
       if (boatToDeploy.includes("cinco") && location + 1 - 5 >= 0) {
         console.log("Bote de cinco casillas puede ser colocado");
         setBoatKey(nanoid());
@@ -136,8 +136,11 @@ const Board = ({ playerName }: any) => {
           return def !== -1;
         });
 
-      console.log("vertical location: ", location[0]);
-      if (boatToDeploy.includes("cinco") && 5 - location[0] + 1 >= 0) {
+      console.log("horizontal location: ", Math.abs(location[0] + 1 - 10 ) + 1);
+      if (
+        boatToDeploy.includes("cinco") &&
+        Math.abs(location[0] + 1 - 10) + 1 >= 5
+      ) {
         console.log("Bote de cinco casillas puede ser colocado");
         setBoatKey(nanoid());
         setOrientationKey(nanoid());
@@ -145,7 +148,7 @@ const Board = ({ playerName }: any) => {
         setFiveSpaces(fiveSpaces - 1);
         getOptions();
       }
-      if (boatToDeploy.includes("tres") && 3 - location[0] + 1 >= 0) {
+      if (boatToDeploy.includes("tres") && Math.abs(location[0] + 1 - 10) + 1 >= 3) {
         console.log("Bote de tres casillas puede ser colocado");
         setBoatKey(nanoid());
         setOrientationKey(nanoid());
@@ -154,7 +157,7 @@ const Board = ({ playerName }: any) => {
         getOptions();
       }
 
-      if (boatToDeploy.includes("dos") && 2 - location[0] + 1 >= 0) {
+      if (boatToDeploy.includes("dos") && Math.abs(location[0] + 1 - 10) + 1 >= 2) {
         console.log("Bote de dos casillas puede ser colocado");
         setBoatKey(nanoid());
         setOrientationKey(nanoid());
@@ -197,7 +200,7 @@ const Board = ({ playerName }: any) => {
           }
           options={options}
           onChange={(event: any, newValue: any | null) => {
-            setBoatToDeploy(newValue);
+            setBoatToDeploy(newValue || "");
             setError(false);
           }}
           getOptionDisabled={(option: any) => {
@@ -236,7 +239,7 @@ const Board = ({ playerName }: any) => {
             fiveSpaces === 0 && threeSpaces === 0 && twoSpaces === 0 ? true : false
           }
           onChange={(event: any, newValue: any | null) => {
-            setOrientationToDeploy(newValue);
+            setOrientationToDeploy(newValue || "");
             setError(false);
           }}
           options={["Horizontal", "Vertical"]}
