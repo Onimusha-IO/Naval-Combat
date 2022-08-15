@@ -1,0 +1,24 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.layout {
+  width: 100vw;
+  height: 100vh;
+}
+
+.tittle {
+  height: 113px;
+  display: flex;
+  justify-content: center;
+}
+
+.content {
+    width: 100%;
+  height: calc(100vh - 113px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

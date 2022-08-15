@@ -1,0 +1,39 @@
+.board {
+  display: block;
+
+  .playerName {
+    margin-bottom: 8px;
+  }
+
+  .selector{
+    margin-bottom: 12px;
+  }
+
+  .boardPanel {
+    padding: 16px;
+
+    .columnNames {
+      display: flex;
+
+      .column {
+        width: 25px;
+        height: 25px;
+        margin: 4px;
+        border: 1px solid white;
+        border-radius: 2px;
+      }
+    }
+
+    .rows {
+      display: flex;
+
+      .rowNames {
+        width: 25px;
+        height: 25px;
+        margin: 4px;
+        border: 1px solid white;
+        border-radius: 2px;
+      }
+    }
+  }
+}
