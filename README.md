@@ -1,5 +1,5 @@
 ## Naval-Combat
-A front end ppractice project.
+A front end table top game practice project.
 
 ### Technologies
 Project created with:
